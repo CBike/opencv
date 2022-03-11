@@ -1,0 +1,28 @@
+import cv2
+
+
+
+
+
+
+
+flag = [cv2.IMREAD_COLOR,cv2.IMREAD_GRAYSCALE,cv2.IMREAD_ANYCOLOR,cv2.IMREAD_ANYCOLOR
+        ,cv2.IMREAD_UNCHANGED,cv2.IMREAD_ANYDEPTH,cv2.IMREAD_IGNORE_ORIENTATION
+        ,cv2.IMREAD_LOAD_GDAL,cv2.IMREAD_REDUCED_COLOR_2,cv2.IMREAD_REDUCED_COLOR_4
+        ,cv2.IMREAD_REDUCED_COLOR_8,cv2.IMREAD_REDUCED_GRAYSCALE_2,cv2.IMREAD_REDUCED_GRAYSCALE_4
+        ,cv2.IMREAD_REDUCED_GRAYSCALE_8]
+
+flag_names = ['cv2.IMREAD_COLOR','cv2.IMREAD_GRAYSCALE','cv2.IMREAD_ANYCOLOR','cv2.IMREAD_ANYCOLOR'
+        ,'cv2.IMREAD_UNCHANGED','cv2.IMREAD_ANYDEPTH','cv2.IMREAD_IGNORE_ORIENTATION'
+        ,'cv2.IMREAD_LOAD_GDAL','cv2.IMREAD_REDUCED_COLOR_2','cv2.IMREAD_REDUCED_COLOR_4'
+        ,'cv2.IMREAD_REDUCED_COLOR_8','cv2.IMREAD_REDUCED_GRAYSCALE_2','cv2.IMREAD_REDUCED_GRAYSCALE_4'
+        ,'cv2.IMREAD_REDUCED_GRAYSCALE_8']
+
+
+for n, i in enumerate(flag):
+    result = cv2.imread('./image/S1000rr.jpg', i)
+    result = cv2.resize(result,dsize=(600,300),interpolation=cv2.INTER_AREA)
+    cv2.imshow('{}'.format(flag_names[n]), result)
+
+cv2.waitKey()
+cv2.destroyAllWindows()
