@@ -9,5 +9,5 @@ if k ==27 :
     cv2.destroyAllWindows()
 
 elif k == ord('s'):
-    cv2.imwrite('./image/S1000rr_grayscale', bike)
+    cv2.imwrite('./image/S1000rr_grayscale.jpg', bike)
     cv2.destroyAllWindows()
