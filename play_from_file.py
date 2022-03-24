@@ -1,6 +1,6 @@
 import cv2
 
-cap = cv2.VideoCapture('C:\Users\yangho.jeon\Videos\ManyCam\My Recording_1.mp4')
+cap = cv2.VideoCapture(0)
 
 print('width: {0}, height: {1}'.format(cap.get(3),cap.get(4)))
 
