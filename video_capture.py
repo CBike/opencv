@@ -3,25 +3,20 @@ import cv2
 capture = cv2.VideoCapture("F:\dev\opencv\image\oppen.mp4")
 print(f"isOpened : {capture.isOpened()}")
 
-
-
-
-
-
-
-
 while cv2.waitKey(33) < 0:
     if (capture.get(cv2.CAP_PROP_POS_FRAMES) == capture.get(cv2.CAP_PROP_FRAME_COUNT)):
         capture.set(cv2.CAP_PROP_POS_FRAMES, 0)
 
     ret, frame = capture.read()
+
     print(f"현재 프레임 : {capture.get(cv2.CAP_PROP_POS_FRAMES)}")
-    print(f"Video_WIDTH: : {capture.get(cv2.CAP_PROP_FRAME_WIDTH)}")
-    print(f"Video_height: : {capture.get(cv2.CAP_PROP_FRAME_HEIGHT)}")
-    print(f"Frame Count: : {capture.get(cv2.CAP_PROP_FRAME_COUNT)}")
-    print(f"Frame per seconds: : {capture.get(cv2.CAP_PROP_FPS)}")
-    print(f"codec code : : {capture.get(cv2.CAP_PROP_FOURCC)}")
-    print(f"frame play time  : : {capture.get(cv2.CAP_PROP_POS_MSEC)}")
+    print(f"프레임 너비 : : {capture.get(cv2.CAP_PROP_FRAME_WIDTH)}")
+    print(f"프레임 높이: : {capture.get(cv2.CAP_PROP_FRAME_HEIGHT)}")
+    print(f"총 프레임 : : {capture.get(cv2.CAP_PROP_FRAME_COUNT)}")
+    print(f"FPS: : {capture.get(cv2.CAP_PROP_FPS)}")
+    print(f"코덱 코드 : : {capture.get(cv2.CAP_PROP_FOURCC)}")
+    print(f"프레임 플레이 타임  : : {capture.get(cv2.CAP_PROP_POS_MSEC)} ms")
+
     cv2.imshow("videoframe", frame)
 
 capture.release()
