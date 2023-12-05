@@ -29,10 +29,10 @@ while True:
         record = True
         video = cv2.VideoWriter("./image" + str(now) + ".avi", fourcc, 20.0, (frame.shape[1], frame.shape[0]))
 
-    elif key == 3:
+    elif key == 22:
         print("녹화 중지")
         record = False
-        video.release()
+
 
     if record == True:
         print("녹화중..")
