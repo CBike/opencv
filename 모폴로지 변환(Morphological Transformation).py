@@ -3,7 +3,6 @@ import cv2
 
 
 src = cv2.imread("./image/zebra.JPG")
-src = cv2.imread("./image/zebra.JPG")
 
 
 kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (9, 9))
